@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ruleset name="PHP Compatibility">
+    <rule ref="PHPCompatibilityWP"/>
+
+    <config name="testVersion" value="7.4-8.0"/>
+
+    <!-- Exclude directories -->
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+
+    <!-- Include all PHP files in your theme or plugin -->
+    <file>./</file>
+</ruleset>
