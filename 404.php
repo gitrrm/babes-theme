@@ -8,53 +8,20 @@
  */
 
 get_header();
+
+// Include the 404 class.
+require get_template_directory() . '/inc/class-babes-404.php';
+
+// Instantiate the 404 page class.
+$babes_404_page = new Babes_404_Page();
+
 ?>
 
-	<main id="primary" class="site-main">
+<!-- Render the 404 page content. -->
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'babes' ); ?></h1>
-			</header><!-- .page-header -->
-
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'babes' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'babes' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$babes_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'babes' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$babes_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
-
-	</main><!-- #main -->
+<main id="primary" class="site-main">
+	<?php $babes_404_page->render_404_page(); ?>
+</main><!-- #main -->
 
 <?php
 get_footer();
