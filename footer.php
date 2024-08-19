@@ -9,26 +9,11 @@
  * @package babes
  */
 
-?>
+// Include the Footer class.
+require get_template_directory() . '/inc/class-babes-footer.php';
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'babes' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'babes' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'babes' ), 'babes', '<a href="https://triloke.com/">triloke</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+// Instantiate the Footer class.
+$babes_footer = new Babes_Footer();
 
-<?php wp_footer(); ?>
-
-</body>
-</html>
+// Render the Footer section.
+$babes_footer->render_footer();

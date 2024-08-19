@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in page.php
+ * Template part for displaying page content in page.php basically the posts loop item
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
