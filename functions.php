@@ -24,15 +24,7 @@ class Babes_Theme {
 	    $this->load_dependencies();
 	}
 
-	
-	/*public function __construct() {
-		add_action( 'after_setup_theme', [ $this, 'setup' ] );
-		add_action( 'after_setup_theme', [ $this, 'set_content_width' ], 0 );
-		add_action( 'widgets_init', [ $this, 'widgets_init' ] );
-		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 
-		$this->load_dependencies();
-	}*/
 
 	public function setup() {
 		load_theme_textdomain( 'babes', get_template_directory() . '/languages' );
@@ -43,7 +35,8 @@ class Babes_Theme {
 
 		register_nav_menus(
 			array(
-				'main-menu' => esc_html__( 'Primary Menu - Header', 'babes' ),
+				'primary_menu' => esc_html__( 'Primary Menu - Header', 'babes' ),
+				'footer_site_info_menu' => esc_html__( 'Footer Site Info Menu', 'babes' ),
 			)
 		);
 

@@ -12,18 +12,25 @@ class Babes_Footer {
 	 */
 	public function render_site_info() {
 		?>
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'babes' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'babes' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'babes' ), 'babes', '<a href="https://triloke.com/">triloke</a>' );
-				?>
+		<div class="site-info container">
+			<div class="col-3">
+				<?php echo esc_html__( '&copy; Copyright ', 'babes' ) . date("Y"); ?>
+			</div>
+			<div class="col-6">
+				<nav id="site-info-navigation" class="site-info-navigation">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'footer_site_info_menu',
+							'menu_id'        => 'footer_site_info_menu',
+						)
+					);
+					?>
+				</nav><!-- #site-info-navigation -->
+			</div>
+			<div class="col-3">
+				<h2>Social media icons</h2>
+			</div>
 		</div><!-- .site-info -->
 		<?php
 	}
@@ -47,4 +54,5 @@ class Babes_Footer {
 		</html>
 		<?php
 	}
+	
 }

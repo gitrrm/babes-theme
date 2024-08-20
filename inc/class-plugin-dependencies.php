@@ -12,6 +12,12 @@ class Plugin_Dependencies {
                 'file' => 'elementor/elementor.php',
                 'source' => get_template_directory() . '/inc/plugins/elementor.zip'
             ],
+            'revslider' => [
+                'name' => 'Revolution Slider',
+                'slug' => 'revslider',
+                'file' => 'revslider/revslider.php',
+                'source' => get_template_directory() . '/inc/plugins/revslider.zip'
+            ],
             // Add more plugins here
         ];
 

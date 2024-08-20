@@ -4,7 +4,7 @@
  *
  * You can add an optional custom header image to header.php like so ...
  *
-	<?php the_header_image_tag(); ?>
+ *	<?php the_header_image_tag(); ?>
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
@@ -69,7 +69,7 @@ if ( ! function_exists( 'babes_header_style' ) ) :
 			?>
 			.site-title a,
 			.site-description {
-				color: #<?php echo esc_attr( $header_text_color ); ?>;
+				color: #<?php echo esc_attr( $header_text_color ); ?>
 			}
 		<?php endif; ?>
 		</style>

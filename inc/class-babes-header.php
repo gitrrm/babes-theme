@@ -66,8 +66,8 @@ class Babes_Header {
 			<?php
 			wp_nav_menu(
 				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
+					'theme_location' => 'primary_menu',
+					'menu_id'        => 'primary_menu',
 				)
 			);
 			?>
